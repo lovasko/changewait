@@ -8,8 +8,21 @@ attribute changes, cases where someone removes the file or revokes the
 access to it, renames the file or changes the hardlink count.
 
 ## Usage
-The utility expects exactly one argument: a path to the soon-to-be watched
-file. The utility alone has not much use, yet it is a great addition to 
+The program expects zero or mode optional flags, specifying the set of
+changes that should be watched and a path to a file. In case that no flag 
+was specified, all event types are considered.
+
+## Flags
+ * `-a` the file attributes changed
+ * `-d` the file was deleted
+ * `-e` the file was extended
+ * `-l` the number of links to the file changed
+ * `-m` the file was moved (renamed)
+ * `-r` the access rights to the file were revoked
+ * `-w` the file has been written into
+
+## Example 
+The utility alone has not much use, yet it is a great addition to 
 your shell script automation workflow.
 
 ```sh
